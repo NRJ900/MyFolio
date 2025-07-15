@@ -95,6 +95,10 @@ const Hero = () => {
                   variant="outline"
                   size="lg"
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-bounce"
+                  as="a"
+                  href="https://github.com/NRJ900/MyFolio/blob/main/Mani-S-Neeraj-Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
