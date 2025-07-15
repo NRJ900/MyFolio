@@ -96,12 +96,12 @@ const Hero = () => {
                   size="lg"
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-bounce"
                   as="a"
-                  href="https://nhdkmxwtsmwmbazqcvqc.supabase.co/storage/v1/object/public/images/resume/Mani-S-Neeraj-Resume.pdf"
+                  href="https://2hqa8icvn7t46syi.public.blob.vercel-storage.com/Mani-S-Neeraj-Resume.pdf"
                   download
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Download className="mr-2 h-5 w-5" href="https://nhdkmxwtsmwmbazqcvqc.supabase.co/storage/v1/object/public/images/resume/Mani-S-Neeraj-Resume.pdf"
+                  <Download className="mr-2 h-5 w-5" href="https://2hqa8icvn7t46syi.public.blob.vercel-storage.com/Mani-S-Neeraj-Resume.pdf"
                   />
                   Download Resume
                 </Button>
