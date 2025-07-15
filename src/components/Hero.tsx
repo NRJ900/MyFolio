@@ -101,7 +101,8 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Download className="mr-2 h-5 w-5" />
+                  <Download className="mr-2 h-5 w-5" href="https://nhdkmxwtsmwmbazqcvqc.supabase.co/storage/v1/object/public/images/resume/Mani-S-Neeraj-Resume.pdf"
+                  />
                   Download Resume
                 </Button>
               </a>
