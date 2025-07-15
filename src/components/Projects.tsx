@@ -178,7 +178,7 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1 text-xs hover:glow-electric">
+                    <Button variant="outline" size="sm" className="flex-1 text-xs hover:glow-electric" onClick={() => window.open(project.github, '_blank')}>
                       <Eye className="w-3 h-3 mr-1" />
                       View
                     </Button>
