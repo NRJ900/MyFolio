@@ -73,7 +73,7 @@ const Skills = () => {
       title: "Cybersecurity & OSINT",
       icon: "🛡️",
       skills: [
-        { name: "OSINT Tools", iconUrl: "https://cdn.simpleicons.org/kali" },
+        { name: "OSINT Tools", iconUrl: "https://imgs.search.brave.com/hJosUW7y4XLJAF2QlGGkfUIOyW2x6126KJIsXAy69pM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL3ByZW1p/dW0vcG5nLTI1Ni10/aHVtYi9vcGVuLXNv/dXJjZS1pY29uLWRv/d25sb2FkLWluLXN2/Zy1wbmctZ2lmLWZp/bGUtZm9ybWF0cy0t/ZGV2ZWxvcG1lbnQt/cHJvZ3JhbW1pbmct/c29mdHdhcmUtdGVj/aG5vbG9neS1lbWJl/ZGRlZC13ZWItY29u/LXNldC03NS1wYWNr/LW1pc2NlbGxhbmVv/dXMtaWNvbnMtMTA3/MDg0OTYucG5nP2Y9/d2VicCZ3PTEyOA"},
         { name: "Ethical Hacking (Python)", iconUrl: "https://cdn.simpleicons.org/python" },
         { name: "Cyber Defense", iconUrl: "https://cdn.simpleicons.org/cloudflare" },
         { name: "Secure System Design", iconUrl: "https://cdn.simpleicons.org/fortinet" },
