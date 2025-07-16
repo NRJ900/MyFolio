@@ -30,7 +30,7 @@ const Skills = () => {
       title: "Programming Languages",
       icon: "💻",
       skills: [
-        { name: "Python", level: 95 },
+        { name: "Python", },
         { name: "C++", level: 65 },
         { name: "C", level: 75 },
         { name: "JavaScript", level: 85 },
