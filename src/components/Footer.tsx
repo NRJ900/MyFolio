@@ -15,9 +15,6 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Brand */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold text-gradient-primary mb-2">
-              NRJ900.dev
-            </h3>
             <p className="text-muted-foreground text-sm">
               Building projects with passion and precision.
             </p>
