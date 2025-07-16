@@ -1,23 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  SiPython,
-  SiCplusplus,
-  SiC,
-  SiJavascript,
-  SiHtml5,
-  SiOpencv,
-  SiScikitlearn,
-  SiFlask,
-  SiGit,
-  SiGithub,
-  SiVscode,
-  SiSqlite,
-  SiSupabase,
-  SiQt,
-  SiMysql,
-} from 'react-icons/si';
-import { FaRobot, FaDatabase, FaPalette, FaShieldAlt, FaTools, FaLaptopCode } from 'react-icons/fa';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,60 +23,60 @@ const Skills = () => {
       title: "Programming Languages",
       icon: "💻",
       skills: [
-        { name: "Python", icon: <SiPython className="text-yellow-400" /> },
-        { name: "C++", icon: <SiCplusplus className="text-blue-400" /> },
-        { name: "C", icon: <SiC className="text-cyan-500" /> },
-        { name: "JavaScript", icon: <SiJavascript className="text-yellow-300" /> },
-        { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> },
+        { name: "Python", iconUrl: "https://cdn.simpleicons.org/python" },
+        { name: "C++", iconUrl: "https://cdn.simpleicons.org/cplusplus" },
+        { name: "C", iconUrl: "https://cdn.simpleicons.org/c" },
+        { name: "JavaScript", iconUrl: "https://cdn.simpleicons.org/javascript" },
+        { name: "HTML", iconUrl: "https://cdn.simpleicons.org/html5" },
       ],
     },
     {
       title: "AI/ML & Prompt Engineering",
-      icon: <FaRobot />,
+      icon: "🤖",
       skills: [
-        { name: "YOLOv5", icon: <FaRobot className="text-red-400" /> },
-        { name: "OpenCV", icon: <SiOpencv className="text-indigo-500" /> },
-        { name: "CNN", icon: <FaRobot className="text-blue-300" /> },
-        { name: "scikit-learn", icon: <SiScikitlearn className="text-yellow-300" /> },
+        { name: "YOLOv5", iconUrl: "https://cdn.simpleicons.org/pytorch" },
+        { name: "OpenCV", iconUrl: "https://cdn.simpleicons.org/opencv" },
+        { name: "CNN", iconUrl: "https://cdn.simpleicons.org/tensorflow" },
+        { name: "scikit-learn", iconUrl: "https://cdn.simpleicons.org/scikitlearn" },
       ],
     },
     {
-      title: "Software Dev & UI/UX",
-      icon: <FaPalette />,
+      title: "Software Development & UI/UX",
+      icon: "🎨",
       skills: [
-        { name: "Tkinter", icon: <FaLaptopCode className="text-purple-500" /> },
-        { name: "PyQt", icon: <SiQt className="text-green-500" /> },
-        { name: "Responsive UI Design", icon: <FaPalette className="text-pink-400" /> },
-        { name: "Flask", icon: <SiFlask className="text-gray-500" /> },
-        { name: "NoCode/LowCode", icon: <FaPalette className="text-yellow-400" /> },
+        { name: "Tkinter", iconUrl: "https://cdn.simpleicons.org/python" },
+        { name: "PyQt", iconUrl: "https://cdn.simpleicons.org/qt" },
+        { name: "Responsive UI Design", iconUrl: "https://cdn.simpleicons.org/figma" },
+        { name: "Flask", iconUrl: "https://cdn.simpleicons.org/flask" },
+        { name: "NoCode/LowCode", iconUrl: "https://cdn.simpleicons.org/make" },
       ],
     },
     {
       title: "Database & Backend",
-      icon: <FaDatabase />,
+      icon: "🗃️",
       skills: [
-        { name: "SQL", icon: <SiMysql className="text-blue-500" /> },
-        { name: "SQLite", icon: <SiSqlite className="text-blue-400" /> },
-        { name: "Supabase", icon: <SiSupabase className="text-green-500" /> },
+        { name: "SQL", iconUrl: "https://cdn.simpleicons.org/mysql" },
+        { name: "SQLite", iconUrl: "https://cdn.simpleicons.org/sqlite" },
+        { name: "Supabase", iconUrl: "https://cdn.simpleicons.org/supabase" },
       ],
     },
     {
       title: "DevOps & Tools",
-      icon: <FaTools />,
+      icon: "🔧",
       skills: [
-        { name: "Git", icon: <SiGit className="text-orange-500" /> },
-        { name: "GitHub", icon: <SiGithub className="text-white" /> },
-        { name: "VS Code", icon: <SiVscode className="text-blue-500" /> },
+        { name: "Git", iconUrl: "https://cdn.simpleicons.org/git" },
+        { name: "GitHub", iconUrl: "https://cdn.simpleicons.org/github" },
+        { name: "VS Code", iconUrl: "https://cdn.simpleicons.org/visualstudiocode" },
       ],
     },
     {
       title: "Cybersecurity & OSINT",
-      icon: <FaShieldAlt />,
+      icon: "🛡️",
       skills: [
-        { name: "OSINT Tools", icon: <FaShieldAlt className="text-red-500" /> },
-        { name: "Ethical Hacking (Python)", icon: <SiPython className="text-yellow-400" /> },
-        { name: "Cyber Defense", icon: <FaShieldAlt className="text-green-500" /> },
-        { name: "Secure System Design", icon: <FaShieldAlt className="text-purple-400" /> },
+        { name: "OSINT Tools", iconUrl: "https://cdn.simpleicons.org/kali" },
+        { name: "Ethical Hacking (Python)", iconUrl: "https://cdn.simpleicons.org/python" },
+        { name: "Cyber Defense", iconUrl: "https://cdn.simpleicons.org/cloudflare" },
+        { name: "Secure System Design", iconUrl: "https://cdn.simpleicons.org/fortinet" },
       ],
     },
   ];
@@ -103,37 +85,45 @@ const Skills = () => {
     <section id="skills" className="py-20">
       <div className="container mx-auto px-6 lg:px-8">
         <div className={`transition-all duration-1000 ${isVisible ? 'animate-slideUp' : 'opacity-0'}`}>
+          {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-gradient-primary">Skills & Expertise</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A comprehensive overview of my technical skills
+              A comprehensive overview of my technical skills and proficiency levels
             </p>
             <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mt-6"></div>
           </div>
 
+          {/* Skills Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skillCategories.map((cat, idx) => (
+            {skillCategories.map((category, categoryIndex) => (
               <Card
-                key={cat.title}
+                key={category.title}
                 className={`bg-card border-border hover:border-primary/50 transition-all duration-500 hover:glow-electric ${
                   isVisible ? 'animate-slideUp' : 'opacity-0'
                 }`}
-                style={{ animationDelay: `${idx * 150}ms` }}
+                style={{ animationDelay: `${categoryIndex * 150}ms` }}
               >
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <span className="text-2xl mr-3">{cat.icon}</span>
-                    <h3 className="text-lg font-bold text-gradient-electric">{cat.title}</h3>
+                    <span className="text-2xl mr-3">{category.icon}</span>
+                    <h3 className="text-lg font-bold text-gradient-electric">{category.title}</h3>
                   </div>
+
                   <div className="space-y-4">
-                    {cat.skills.map((skill) => (
+                    {category.skills.map((skill) => (
                       <div
                         key={skill.name}
                         className="flex items-center space-x-3 group hover:scale-[1.03] transition-all duration-300"
                       >
-                        <span className="text-xl group-hover:scale-110 transition-transform">{skill.icon}</span>
+                        <img
+                          src={skill.iconUrl}
+                          alt={skill.name}
+                          className="w-5 h-5 group-hover:scale-110 transition-transform"
+                          loading="lazy"
+                        />
                         <span className="text-sm font-medium text-foreground group-hover:text-primary">
                           {skill.name}
                         </span>
@@ -145,8 +135,28 @@ const Skills = () => {
             ))}
           </div>
 
+          {/* Additional Info */}
           <div className="mt-16 grid lg:grid-cols-3 gap-8">
-            {/* ... Info cards remain unchanged ... */}
+            <Card className="bg-gradient-primary/10 border-primary/20 hover:glow-electric transition-smooth">
+              <CardContent className="p-6 text-center">
+                <div className="text-3xl font-bold text-primary mb-2">5+</div>
+                <div className="text-sm text-muted-foreground">Courses Completed</div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-primary/10 border-primary/20 hover:glow-electric transition-smooth">
+              <CardContent className="p-6 text-center">
+                <div className="text-3xl font-bold text-accent mb-2">10+</div>
+                <div className="text-sm text-muted-foreground">Projects Completed</div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gradient-primary/10 border-primary/20 hover:glow-electric transition-smooth">
+              <CardContent className="p-6 text-center">
+                <div className="text-3xl font-bold text-success mb-2">5+</div>
+                <div className="text-sm text-muted-foreground">Certifications</div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
