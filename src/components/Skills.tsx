@@ -1,10 +1,26 @@
 import { useEffect, useState } from 'react';
-import { Progress } from '@/components/ui/progress';
 import { Card, CardContent } from '@/components/ui/card';
+import {
+  SiPython,
+  SiCplusplus,
+  SiC,
+  SiJavascript,
+  SiHtml5,
+  SiOpencv,
+  SiScikitlearn,
+  SiFlask,
+  SiGit,
+  SiGithub,
+  SiVscode,
+  SiSqlite,
+  SiSupabase,
+  SiTkinter,
+  SiQt,
+} from 'react-icons/si';
+import { FaRobot, FaDatabase, FaPalette, FaShieldAlt, FaTools } from 'react-icons/fa';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [animateProgress, setAnimateProgress] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -12,7 +28,6 @@ const Skills = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            setTimeout(() => setAnimateProgress(true), 500);
           }
         });
       },
@@ -30,60 +45,60 @@ const Skills = () => {
       title: "Programming Languages",
       icon: "💻",
       skills: [
-        { name: "Python", level: 90},
-        { name: "C++", level: 65 },
-        { name: "C", level: 75 },
-        { name: "JavaScript", level: 85 },
-        { name: "HTML", level: 90 }
+        { name: "Python", icon: <SiPython className="text-yellow-400" /> },
+        { name: "C++", icon: <SiCplusplus className="text-blue-400" /> },
+        { name: "C", icon: <SiC className="text-cyan-500" /> },
+        { name: "JavaScript", icon: <SiJavascript className="text-yellow-300" /> },
+        { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> }
       ]
     },
     {
       title: "AI/ML & Prompt Engineering",
-      icon: "🤖",
+      icon: <FaRobot />,
       skills: [
-        { name: "YOLOv5", level: 90 },
-        { name: "OpenCV", level: 75 },
-        { name: "CNN", level: 75 },
-        { name: "scikit-learn", level: 80 }
+        { name: "YOLOv5", icon: <FaRobot className="text-red-400" /> },
+        { name: "OpenCV", icon: <SiOpencv className="text-indigo-500" /> },
+        { name: "CNN", icon: <FaRobot className="text-blue-300" /> },
+        { name: "scikit-learn", icon: <SiScikitlearn className="text-yellow-300" /> }
       ]
     },
     {
       title: "Software Development & UI/UX",
-      icon: "🎨",
+      icon: <FaPalette />,
       skills: [
-        { name: "Tkinter", level: 85 },
-        { name: "PyQt", level: 90 },
-        { name: "Responsive UI Design", level: 90 },
-        { name: "Flask", level: 80 },
-        { name: "NoCode/LowCode", level: 85 }
+        { name: "Tkinter", icon: <SiTkinter className="text-purple-500" /> },
+        { name: "PyQt", icon: <SiQt className="text-green-500" /> },
+        { name: "Responsive UI Design", icon: <FaPalette className="text-pink-400" /> },
+        { name: "Flask", icon: <SiFlask className="text-gray-500" /> },
+        { name: "NoCode/LowCode", icon: <FaPalette className="text-yellow-400" /> }
       ]
     },
     {
       title: "Database & Backend",
-      icon: "🗃️",
+      icon: <FaDatabase />,
       skills: [
-        { name: "SQL", level: 85 },
-        { name: "SQLite", level: 80 },
-        { name: "Supabase", level: 75 }
+        { name: "SQL", icon: <SiMysql className="text-blue-500" /> },
+        { name: "SQLite", icon: <SiSqlite className="text-blue-400" /> },
+        { name: "Supabase", icon: <SiSupabase className="text-green-500" /> }
       ]
     },
     {
       title: "DevOps & Tools",
-      icon: "🔧",
+      icon: <FaTools />,
       skills: [
-        { name: "Git", level: 90 },
-        { name: "GitHub", level: 95 },
-        { name: "VS Code", level: 95 }
+        { name: "Git", icon: <SiGit className="text-orange-500" /> },
+        { name: "GitHub", icon: <SiGithub className="text-white" /> },
+        { name: "VS Code", icon: <SiVscode className="text-blue-500" /> }
       ]
     },
     {
       title: "Cybersecurity & OSINT",
-      icon: "🛡️",
+      icon: <FaShieldAlt />,
       skills: [
-        { name: "OSINT Tools", level: 85 },
-        { name: "Ethical Hacking (Python)", level: 80 },
-        { name: "Cyber Defense", level: 90 },
-        { name: "Secure System Design", level: 85 }
+        { name: "OSINT Tools", icon: <FaShieldAlt className="text-red-500" /> },
+        { name: "Ethical Hacking (Python)", icon: <SiPython className="text-yellow-400" /> },
+        { name: "Cyber Defense", icon: <FaShieldAlt className="text-green-500" /> },
+        { name: "Secure System Design", icon: <FaShieldAlt className="text-purple-400" /> }
       ]
     }
   ];
@@ -106,7 +121,7 @@ const Skills = () => {
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, categoryIndex) => (
-              <Card 
+              <Card
                 key={category.title}
                 className={`bg-card border-border hover:border-primary/50 transition-all duration-500 hover:glow-electric ${
                   isVisible ? 'animate-slideUp' : 'opacity-0'
@@ -120,25 +135,17 @@ const Skills = () => {
                       {category.title}
                     </h3>
                   </div>
-                  
+
                   <div className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skill.name} className="space-y-2">
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium text-foreground">
-                            {skill.name}
-                          </span>
-                          <span className="text-sm text-muted-foreground">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <Progress 
-                          value={animateProgress ? skill.level : 0} 
-                          className="h-2 bg-tech-gray"
-                          style={{
-                            transition: `all 1s ease-out ${(categoryIndex * 150 + skillIndex * 100)}ms`
-                          }}
-                        />
+                    {category.skills.map((skill) => (
+                      <div
+                        key={skill.name}
+                        className="flex items-center space-x-3 group hover:scale-[1.03] transition-all duration-300"
+                      >
+                        <span className="text-xl group-hover:scale-110 transition-transform">{skill.icon}</span>
+                        <span className="text-sm font-medium text-foreground group-hover:text-primary">
+                          {skill.name}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -155,14 +162,14 @@ const Skills = () => {
                 <div className="text-sm text-muted-foreground">Courses Completed</div>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-gradient-primary/10 border-primary/20 hover:glow-electric transition-smooth">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl font-bold text-accent mb-2">10+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </CardContent>
             </Card>
-            
+
             <Card className="bg-gradient-primary/10 border-primary/20 hover:glow-electric transition-smooth">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl font-bold text-success mb-2">5+</div>
