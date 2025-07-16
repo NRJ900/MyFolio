@@ -27,21 +27,36 @@ const Hero = () => {
     "Cross-Platform Builder",
     "Automation Engineer",
     "Performance Optimizer"
-]
-
+  ];
 
   const [currentRole, setCurrentRole] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 2500);// Change role every 3.5 seconds
-    return () => clearInterval(interval);
-  }, []);
+    const fullText = roles[currentRole];
+    let typingSpeed = isDeleting ? 50 : 100;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(fullText.slice(0, displayText.length + 1));
+        if (displayText.length + 1 === fullText.length) {
+          setTimeout(() => setIsDeleting(true), 1500); // wait before deleting
+        }
+      } else {
+        setDisplayText(fullText.slice(0, displayText.length - 1));
+        if (displayText.length === 0) {
+          setIsDeleting(false);
+          setCurrentRole((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, currentRole]);
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden animated-bg pt-16 md:pt-24 lg:pt-20">
-  {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-electric-blue/40 rounded-full blur-3xl float"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-electric-purple/20 rounded-full blur-3xl float" style={{ animationDelay: '1s' }}></div>
@@ -54,9 +69,9 @@ const Hero = () => {
           <div className={`mb-8 transition-all duration-1000 ${isVisible ? 'animate-slideUp' : 'opacity-0'}`}>
             <div className="w-48 h-48 mx-auto rounded-full bg-gradient-primary p-1 pulse-glow group overflow-hidden">
               <img 
-              src="https://nhdkmxwtsmwmbazqcvqc.supabase.co/storage/v1/object/public/images/Public/msn-removebg-preview.png" 
-              alt="Profile Image" 
-              className="w-full h-full rounded-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                src="https://nhdkmxwtsmwmbazqcvqc.supabase.co/storage/v1/object/public/images/Public/msn-removebg-preview.png" 
+                alt="Profile Image" 
+                className="w-full h-full rounded-full object-cover transition-transform duration-500 group-hover:scale-110" 
               />
             </div>
           </div>
@@ -69,8 +84,9 @@ const Hero = () => {
             
             <div className="text-2xl md:text-3xl font-medium mb-6 h-12 flex items-center justify-center">
               <span className="text-muted-foreground">I'm a </span>
-              <span className="text-gradient-electric ml-2 transition-all duration-500">
-                {roles[currentRole]}
+              <span className="text-gradient-electric ml-2 flex items-center">
+                {displayText}
+                <span className="ml-1 w-1.5 h-6 bg-muted-foreground animate-pulse" />
               </span>
             </div>
 
@@ -101,8 +117,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Download className="mr-2 h-5 w-5" href="https://2hqa8icvn7t46syi.public.blob.vercel-storage.com/Mani-S-Neeraj-Resume.pdf"
-                  />
+                  <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </Button>
               </a>
