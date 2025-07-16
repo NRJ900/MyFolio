@@ -29,31 +29,46 @@ const Hero = () => {
     "Performance Optimizer"
   ];
 
-  const [currentRole, setCurrentRole] = useState(0);
   const [displayText, setDisplayText] = useState('');
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const fullText = roles[currentRole];
-    let typingSpeed = isDeleting ? 50 : 100;
+    const currentRole = roles[roleIndex];
+    const fullLength = currentRole.length;
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setDisplayText(fullText.slice(0, displayText.length + 1));
-        if (displayText.length + 1 === fullText.length) {
-          setTimeout(() => setIsDeleting(true), 1500); // wait before deleting
-        }
-      } else {
-        setDisplayText(fullText.slice(0, displayText.length - 1));
-        if (displayText.length === 0) {
-          setIsDeleting(false);
-          setCurrentRole((prev) => (prev + 1) % roles.length);
-        }
-      }
-    }, typingSpeed);
+    const typeSpeed = isDeleting ? 50 : 100;
+    const pauseDuration = 1500;
+
+    let timeout: NodeJS.Timeout;
+
+    if (!isDeleting && charIndex <= fullLength) {
+      timeout = setTimeout(() => {
+        setDisplayText(currentRole.substring(0, charIndex));
+        setCharIndex((prev) => prev + 1);
+      }, typeSpeed);
+    } 
+    else if (isDeleting && charIndex >= 0) {
+      timeout = setTimeout(() => {
+        setDisplayText(currentRole.substring(0, charIndex));
+        setCharIndex((prev) => prev - 1);
+      }, typeSpeed);
+    } 
+    else if (!isDeleting && charIndex > fullLength) {
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, pauseDuration);
+    }
+    else if (isDeleting && charIndex < 0) {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+      setCharIndex(0);
+    }
 
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, currentRole]);
+  }, [charIndex, isDeleting, roleIndex]);
+
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden animated-bg pt-16 md:pt-24 lg:pt-20">
