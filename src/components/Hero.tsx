@@ -10,23 +10,23 @@ const Hero = () => {
   }, []);
 
   const roles = [
-    "AI Enthusiast",
-    "Prompt Engineer",
-    "Cybersecurity Enthusiast",
-    "Full-Stack Developer",
-    "Real-World Problem Solver",
-    "Open-Source Contributor",
-    "UI/UX Developer",
-    "Creative Technologist",
-    "Edge AI Developer",
-    "Multilingual Communicator",
-    "Ethical Hacker",
-    "Deployment Explorer",
-    "Tech Storyteller",
-    "Resilient Learner",
-    "Cross-Platform Builder",
-    "Automation Engineer",
-    "Performance Optimizer"
+    "AI Enthusiast.",
+    "Prompt Engineer.",
+    "Cybersecurity Enthusiast.",
+    "Full-Stack Developer.",
+    "Real-World Problem Solver.",
+    "Open-Source Contributor.",
+    "UI/UX Developer.",
+    "Creative Technologist.",
+    "Edge AI Developer.",
+    "Multilingual Communicator.",
+    "Ethical Hacker.",
+    "Deployment Explorer.",
+    "Tech Storyteller.",
+    "Resilient Learner.",
+    "Cross-Platform Builder.",
+    "Automation Engineer.",
+    "Performance Optimizer."
   ];
 
   const [displayText, setDisplayText] = useState('');
