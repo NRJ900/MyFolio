@@ -54,7 +54,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#hero" className="text-xl font-bold text-gradient-primary">
-              NRJ900.dev
+              My Portfolio
             </a>
           </div>
 
