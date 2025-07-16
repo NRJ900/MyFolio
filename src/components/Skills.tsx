@@ -136,7 +136,7 @@ const Skills = () => {
           </div>
 
           {/* Additional Info */}
-          <div className="mt-16 grid lg:grid-cols-3 gap-8">
+          {/*<div className="mt-16 grid lg:grid-cols-3 gap-8">
             <Card className="bg-gradient-primary/10 border-primary/20 hover:glow-electric transition-smooth">
               <CardContent className="p-6 text-center">
                 <div className="text-3xl font-bold text-primary mb-2">5+</div>
@@ -157,7 +157,7 @@ const Skills = () => {
                 <div className="text-sm text-muted-foreground">Certifications</div>
               </CardContent>
             </Card>
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>
