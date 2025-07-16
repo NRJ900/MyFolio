@@ -66,7 +66,7 @@ const Skills = () => {
       skills: [
         { name: "Git", iconUrl: "https://cdn.simpleicons.org/git" },
         { name: "GitHub", iconUrl: "https://cdn.simpleicons.org/github" },
-        { name: "VS Code", iconUrl: "https://cdn.simpleicons.org/visualstudiocode" },
+        { name: "VS Code", iconUrl: "https://code.visualstudio.com/assets/images/code-stable-white.png" },
       ],
     },
     {
